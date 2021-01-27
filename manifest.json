@@ -1,0 +1,15 @@
+
+{
+  "manifest_version": 2,
+  "name": "Availability",
+  "version": "1.0.0",
+  "permissions": [
+    "alarms",
+    "notifications",
+    "https://www.amd.com/"
+  ],
+  "background": {
+    "scripts": ["notify.js"],
+    "persistent": false
+  }
+}
