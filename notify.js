@@ -1,4 +1,5 @@
-let STORE_URL = 'https://www.amd.com/en/direct-buy/5450881500/fr'
+const STORE_URL = 'https://www.amd.com/en/direct-buy/5450881500/fr'
+const TEXT_SEARCH = 'Out of stock'
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.alarms.create('refresh', { periodInMinutes: 0.1 })
@@ -8,8 +9,8 @@ chrome.runtime.onInstalled.addListener(() => {
 })
 
 chrome.alarms.onAlarm.addListener(async () => {
-  let page = await fetch(STORE_URL).then(res => res.text())
-  if (!page.includes('Out of stock')) {
+  const page = await fetch(STORE_URL).then(res => res.text())
+  if (!page.includes(TEXT_SEARCH)) {
     chrome.notifications.create('BUY NOW', { 
       type: 'basic',
       title: 'BUY NOW',
