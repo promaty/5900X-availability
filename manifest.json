@@ -1,7 +1,7 @@
 
 {
   "manifest_version": 2,
-  "name": "Availability",
+  "name": "5900X Availability",
   "version": "1.0.0",
   "permissions": [
     "alarms",
